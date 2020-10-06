@@ -23,6 +23,10 @@ public class Book {
 
     private Integer numberOfPages;
 
+    private String publisher;
+
+    private String edition;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date publishedDate;
 
@@ -30,12 +34,14 @@ public class Book {
 
     }
 
-    public Book(Integer id, String name, String author, String genres, Integer numberOfPages, Date publishedDate) {
+    public Book(Integer id, String name, String author, String genres, Integer numberOfPages, String publisher, String edition, Date publishedDate) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.genres = genres;
         this.numberOfPages = numberOfPages;
+        this.publisher = publisher;
+        this.edition = edition;
         this.publishedDate = publishedDate;
     }
 
@@ -79,6 +85,22 @@ public class Book {
         this.numberOfPages = numberOfPages;
     }
 
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
     public Date getPublishedDate() {
         return publishedDate;
     }
@@ -95,6 +117,8 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", genres='" + genres + '\'' +
                 ", numberOfPages=" + numberOfPages +
+                ", publisher='" + publisher + '\'' +
+                ", edition='" + edition + '\'' +
                 ", publishedDate=" + publishedDate +
                 '}';
     }

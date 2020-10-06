@@ -16,20 +16,23 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    @GetMapping
+    @GetMapping("/books")
     public Page<Book> getAll(Book book){return bookService.getAll(book);}
 
     @GetMapping("/{id}")
     public Optional<Book> getOneById(@PathVariable Integer id){return bookService.getOneById(id);}
 
     @GetMapping("/{name}")
-    public Optional<Book> getOneByName(@PathVariable String name){return bookService.getOneByName(name);}
+    public List<Book> getAllByName(@PathVariable String name){return bookService.getAllByName(name);}
 
     @GetMapping("/{author}")
     public List<Book> getAllByAuthor(@PathVariable String author){return bookService.getAllByAuthor(author);}
 
     @GetMapping("/{genres}")
     public List<Book> getAllByGenres(@PathVariable String genres){return bookService.getAllByGenres(genres);}
+
+    @GetMapping("/{publisher}")
+    public List<Book> getAllByPublisher(@PathVariable String publisher){return bookService.getAllByPublisher(publisher);}
 
     @PostMapping
     public void add(Book book){bookService.add(book);}

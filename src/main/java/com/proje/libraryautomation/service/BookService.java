@@ -20,11 +20,13 @@ public class BookService {
 
     public Optional<Book> getOneById(Integer id){ return bookRepository.findById(id);}
 
-    public Optional<Book> getOneByName(String name){ return bookRepository.findBookByName(name);}
+    public List<Book> getAllByName(String name){ return bookRepository.findAllByName(name);}
 
     public List<Book> getAllByAuthor(String author){ return bookRepository.findAllByAuthor(author);}
 
     public List<Book> getAllByGenres(String genres){ return bookRepository.findAllByGenres(genres);}
+
+    public List<Book> getAllByPublisher(String publisher){ return bookRepository.findAllByPublisher(publisher);}
 
     public void add(Book book){bookRepository.save(book);}
 
